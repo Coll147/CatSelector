@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Evita scroll horizontal por las tarjetas cortadas */
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | main | footer */
+  min-height: 100dvh;
+}
+
+/* --- Cabecera + hueco para "ALGO" --- */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem 0.5rem;
+}
+
+.titulo {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+}
+
+.slot-extra {
+  min-height: 2.5rem; /* Reserva espacio visible aunque aún esté vacío */
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Quita el borde discontinuo cuando ya pongas tu contenido */
+  border: 1px dashed rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+/* --- Zona central del carrusel --- */
+.stage {
+  position: relative; /* Referencia para los botones absolutos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Recorta las tarjetas laterales a ~la mitad */
+  padding: 1rem 0;
+}
+
+.cards-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.card {
+  flex: 0 0 auto;
+  height: min(55dvh, 460px);
+  border-radius: 16px;
+  background: #ffffff;
+  border: 2px solid #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Tarjeta principal en el centro */
+.card--active {
+  width: min(52vw, 520px);
+  z-index: 2;
+  opacity: 1;
+}
+
+/* Tarjetas de los extremos: asoman ~la mitad y semitransparentes */
+.card--side {
+  width: min(44vw, 440px);
+  opacity: 0.42; /* Transparencia de las tarjetas laterales */
+  z-index: 1;
+}
+
+.card--left {
+  /* Desplaza hacia la izquierda para que solo se vea aprox. la mitad */
+  transform: translateX(-48%) scale(0.94);
+}
+
+.card--right {
+  /* Desplaza hacia la derecha para que solo se vea aprox. la mitad */
+  transform: translateX(48%) scale(0.94);
+}
+
+/* --- Botones < y > encima de todo --- */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20; /* Por encima de tarjetas laterales y central */
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  border: 2px solid #9be32b;
+  background: rgba(155, 227, 43, 0.22);
+  backdrop-filter: blur(4px);
+  color: #111;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(155, 227, 43, 0.45);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.nav-btn--prev {
+  left: 1rem;
+}
+
+.nav-btn--next {
+  right: 1rem;
+}
+
+/* --- Footer --- */
+.footer {
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}

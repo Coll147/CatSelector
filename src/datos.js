@@ -5,7 +5,7 @@ const cats = [
         "power":"velocidad",
         "ability":"spinner",
         "description":"No para de dar vueltas, nunca",
-        "img":"https://media.tenor.com/oiia-oiia-spinning-cat.gif" // placeholder - usa green screen o busca "oiia transparent gif"
+        "img":"https://media.tenor.com/oiia-oiia-spinning-cat.gif"
     },
     {
         "id":"1",
