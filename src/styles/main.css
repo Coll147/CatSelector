@@ -44,18 +44,5 @@ aside {
   overflow-y: auto;
 }
 
-.card_wrapper div {
-  border-radius: 10px;
-  background-color: aqua;
-  height: 150px;
-  margin: 10px;
-}
 
-div h3 {
-  text-align: center;
-}
 
-div img {
-  height: 100px;
-  max-width: 200px;
-}

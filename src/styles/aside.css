@@ -1,0 +1,11 @@
+#cat_info {
+  display: ;
+  background-image: url(https://soggy.cat/static/ssoggycat/main/images/soggycat.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  img {
+    height: 200px;
+  }
+}
