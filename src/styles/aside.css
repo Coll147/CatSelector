@@ -1,11 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Ops+One&family=Cinzel+Decorative:wght@700&family=Orbitron:wght@700&family=Racing+Sans+One&display=swap');
+
+
 #cat_info {
-  display: ;
+  --overlay-color: rgba(0, 0, 0, 0.55);
+  --title-font: 'Racing Sans One', sans-serif;
+
+  position: relative;
+  overflow: hidden;
   background-image: url(https://soggy.cat/static/ssoggycat/main/images/soggycat.webp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--overlay-color);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
   img {
     height: 200px;
+  }
+
+  h2 {
+    font-family: var(--title-font);
+    letter-spacing: 0.04em;
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    color: white;
   }
 }
