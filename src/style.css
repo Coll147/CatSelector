@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. Bloquea la ventana entera para que no haga scroll el body */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;      /* altura exacta de la pantalla */
+  overflow: hidden;    /* evita scroll en toda la web */
+  font-family: system-ui, sans-serif;
+}
+
+header, footer {
+  flex-shrink: 0;      /* evita que se aplasten */
+  padding: 1rem;
+  background-color: #222;
+  color: white;
+}
+
+/* 2. Ocupa el hueco restante sin desbordar */
+.main_wrapper {
+  flex: 1;
+  min-height: 0;       /* permite que los hijos hagan scroll interno */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* 3. Scroll exclusivo dentro de main (y aside si hiciera falta) */
+main {
+  min-height: 0;
+  padding: 1rem;
+  background-color: #f4f4f9;
+  overflow-y: auto;
+}
+
+aside {
+  min-height: 0;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.card_wrapper div {
+  border-radius: 10px;
+  background-color: aqua;
+  height: 150px;
+  margin: 10px;
+}
+
+div h3 {
+  text-align: center;
+}
+
+div img {
+  height: 100px;
+  max-width: 200px;
+}
