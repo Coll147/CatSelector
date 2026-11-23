@@ -43,37 +43,51 @@ function loadList() {
 }
 loadList()
 
-
 // Mount aside
 function loadInfo(cat) {
-    const catInfo = document.getElementById("cat_info");
+    const catInfo = document.getElementById("cat_info"); // Elemento padre
     const title = document.getElementById("cat_info__title")
-    let selector = document.getElementById("cats_selector")
+    const specialAbility = document.getElementById("cat_info__special")
+    const mainAbility = document.getElementById("cat_info__category")
+    const description = document.getElementById("cat_info__description")
+
 
     title.textContent = cats[cat].name
-    selector.value = cats[cat].id
+    specialAbility.textContent = cats[cat].ability
+    
+    description.textContent = cats[cat].description
+    catInfo.style.backgroundImage = `url('${cats[cat].img}')`
+    
 
     switch (cats[cat].power) {
         case 'velocidad':
-            catInfo.style.setProperty("--overlay-color", "rgba(255, 190, 0, 0.45)");
-            catInfo.style.setProperty("--title-font", "'Racing Sans One', sans-serif");
+            catInfo.style.setProperty("--overlay-color", "rgba(255, 190, 0, 0.45)")
+            catInfo.style.setProperty("--title-font", "'Racing Sans One', sans-serif")
+            mainAbility.textContent = "⚡ Velocidad"
             break;
         case 'resistencia':
-            catInfo.style.setProperty("--overlay-color", "rgba(0, 200, 100, 0.45)");
-            catInfo.style.setProperty("--title-font", "'Black Ops One', system-ui");
+            catInfo.style.setProperty("--overlay-color", "rgba(0, 200, 100, 0.45)")
+            catInfo.style.setProperty("--title-font", "'Black Ops One', system-ui")
+            mainAbility.textContent = "🛡️ Resistencia"
             break;
         case 'telepatia':
-            catInfo.style.setProperty("--overlay-color", "rgba(150, 0, 255, 0.45)");
-            catInfo.style.setProperty("--title-font", "'Cinzel Decorative', serif");
+            catInfo.style.setProperty("--overlay-color", "rgba(150, 0, 255, 0.45)")
+            catInfo.style.setProperty("--title-font", "'Cinzel Decorative', serif")
+            mainAbility.textContent = "🔮 Telepatía"
             break;
         case 'fuerza':
-            catInfo.style.setProperty("--overlay-color", "rgba(255, 40, 40, 0.45)");
-            catInfo.style.setProperty("--title-font", "'Anton', sans-serif");
+            catInfo.style.setProperty("--overlay-color", "rgba(255, 40, 40, 0.45)")
+            catInfo.style.setProperty("--title-font", "'Anton', sans-serif")
+            mainAbility.textContent = "💪 Fuerza"
             break;
         case 'ingenio':
-            catInfo.style.setProperty("--overlay-color", "rgba(0, 150, 255, 0.45)");
-            catInfo.style.setProperty("--title-font", "'Orbitron', sans-serif");
+            catInfo.style.setProperty("--overlay-color", "rgba(0, 150, 255, 0.45)")
+            catInfo.style.setProperty("--title-font", "'Orbitron', sans-serif")
+            mainAbility.textContent = "🧠 Ingenio"
             break;
     }
 
+
+    let selector = document.getElementById("cats_selector")
+    selector.value = cats[cat].id
 }

@@ -17,7 +17,7 @@ export const cats = [
     },
     {
         "id":"2",
-        "name":"Scientists Reveal the Hi",
+        "name":"The Hi",
         "power":"telepatia",
         "ability":"hi",
         "description":"Los científicos finalmente lo descubrieron",

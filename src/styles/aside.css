@@ -26,15 +26,62 @@
     z-index: 1;
   }
 
+  #cat_info__img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid aliceblue;
+  }
+
   img {
-    height: 200px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   h2 {
     font-family: var(--title-font);
     letter-spacing: 0.04em;
     margin: 0 0 10px 0;
-    font-size: 2rem;
+    font-size: 3rem;
+    color: white;
+  }
+
+  p {
+    background-color: rgba(54, 54, 54, 0.783);
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    font-size: 1.2rem;
     color: white;
   }
 }
+
+
+.cat_info__badge{
+  background-color: azure;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+  width: 100px;
+  height: 50%;
+}
+
+/* https://cssgrid-generator.netlify.app/ */
+#cat_info {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr) 3fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+#cat_info__category { grid-area: 1 / 1 / 2 / 3; justify-self: center; align-self: center;}
+#cat_info__special { grid-area: 1 / 4 / 2 / 6; justify-self: center; align-self: center;}
+#cat_info__title { grid-area: 2 / 2 / 3 / 5; justify-self: center; align-self: center;}
+#cat_info__img-wrap { grid-area: 3 / 2 / 4 / 5; justify-self: center;}
+#cat_info__description { grid-area: 4 / 1 / 5 / 6; justify-self: center;}
