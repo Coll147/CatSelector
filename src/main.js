@@ -54,10 +54,12 @@ function loadInfo(cat) {
     const specialAbility = document.getElementById("cat_info__special")
     const mainAbility = document.getElementById("cat_info__category")
     const description = document.getElementById("cat_info__description")
+    const video = document.getElementById("cat_info__video")
 
 
     title.textContent = cats[cat].name
     specialAbility.textContent = cats[cat].ability
+    video.src = `https://www.youtube.com/embed/${cats[cat].video}?autoplay=1`//&mute=1
     
     description.textContent = cats[cat].description
     catInfo.style.backgroundImage = `url('${cats[cat].img}')`
