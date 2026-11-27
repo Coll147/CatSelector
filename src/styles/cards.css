@@ -1,4 +1,4 @@
-.card_wrapper div {
+.card_wrapper > div {
   border-radius: 10px;
   background-color: aqua;
   height: 150px;
@@ -6,7 +6,8 @@
   cursor: pointer;
   position: relative;
 
-  ::after {
+  &::after {
+    content: "";
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -14,14 +15,17 @@
 
   h3 {
     text-align: center;
+    margin-bottom: 10px;
   }
+
+  .img_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   img {
-    height: 100px;
+    height: 110px;
     max-width: 200px;
   }
-
 }
-
-
-
-

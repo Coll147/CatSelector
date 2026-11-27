@@ -20,9 +20,13 @@ function loadList() {
             title.textContent = cats[i].name
             div.append(title)
 
-            let image = document.createElement("img")
-            image.src = cats[i].img
-            div.append(image)
+
+            let img_wrapper = document.createElement("div")
+            img_wrapper.classList.add("img_wrapper")
+                let image = document.createElement("img")
+                image.src = cats[i].img
+                img_wrapper.append(image)
+            div.append(img_wrapper)
 
         container.append(div)
 
