@@ -62,7 +62,7 @@ function loadInfo(cat) {
     video.src = `https://www.youtube.com/embed/${cats[cat].video}?autoplay=1`//&mute=1
     
     description.textContent = cats[cat].description
-    catInfo.style.backgroundImage = `url('${cats[cat].img}')`
+    catInfo.style.backgroundImage = `url('${cats[cat].background}')`
     
 
     switch (cats[cat].power) {
