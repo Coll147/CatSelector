@@ -58,7 +58,7 @@ function loadInfo(cat) {
 
 
     title.textContent = cats[cat].name
-    specialAbility.textContent = cats[cat].ability
+    specialAbility.textContent = cats[cat].ability.charAt(0).toUpperCase() + cats[cat].ability.slice(1);
     video.src = `https://www.youtube.com/embed/${cats[cat].video}?autoplay=1`//&mute=1
     
     description.textContent = cats[cat].description
