@@ -5,7 +5,7 @@ import { cats } from './data';
 
 // Mount cat list
 function loadList() {
-    let container = document.getElementById("cat_list")
+    let container = document.getElementById("card_wrapper__cats")
     let selector = document.getElementById("cats_selector")
     for (let i = 0; i < cats.length; i++){
         console.log(`${cats[i].id} ${cats[i].name}`)

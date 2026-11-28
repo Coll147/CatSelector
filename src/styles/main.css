@@ -31,7 +31,6 @@ header, footer {
 /* 3. Scroll exclusivo dentro de main (y aside si hiciera falta) */
 main {
   min-height: 0;
-  max-width: 500px;
   padding: 1rem;
   background-color: #f4f4f9;
   overflow-y: auto;
